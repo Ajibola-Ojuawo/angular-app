@@ -16,11 +16,19 @@ pipeline {
 	echo "Workspace Folder: ${WORKSPACE}"
       }
     }
-    stage ('Install packages') {
+    stage ('Run linting') {
 	steps {
 	  dir("${WORKSPACE}/conduit-ui") {
 	    echo "Install conduit UI packages"
-	    sh "npm install"
+	    sh "npm run lint"
+	  }
+        }
+      }
+      stage ('Build UI') {
+	steps {
+	  dir("${WORKSPACE}/conduit-ui") {
+	    echo "Install conduit UI packages"
+	    sh "npm run build"
 	  }
         }
       }
