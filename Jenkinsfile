@@ -24,13 +24,5 @@ pipeline {
 	  }
         }
       }
-      stage ('Build UI') {
-	steps {
-	  dir("${WORKSPACE}/conduit-ui") {
-	    echo "Install conduit UI packages"
-	    sh "npm run build"
-	  }
-        }
-      }
     }
   }
