@@ -18,7 +18,7 @@ pipeline {
         echo "Workspace Folder: ${WORKSPACE}"
       }
     }
-    stage('Install packages') {
+    stage('Install packages rob') {
       steps {
         sh "git pull origin ${BRANCH}"
       }
